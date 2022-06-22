@@ -1,0 +1,53 @@
+:root {
+  --background-color: #000;
+  --accent-color: #3cff00;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--background-color);
+  font-family: "Pacifico", cursive;
+}
+
+.start-button {
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--accent-color);
+  text-decoration: none;
+  border: var(--accent-color) 2px solid;
+  border-radius: 4px;
+  padding: 2px 20px;
+  background: transparent;
+  text-shadow: 0 0 3px currentColor;
+  box-shadow: inset 0 0 1em var(--accent-color), 0 0 1em var(--accent-color);
+  position: relative;
+}
+
+.start-button::before {
+  content: "";
+  position: absolute;
+  background: var(--accent-color);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(14px);
+}
+
+.start-button:hover,
+.start-button:focus {
+  color: var(--background-color);
+  background: var(--accent-color);
+  outline: none;
+  text-shadow: none;
+}
